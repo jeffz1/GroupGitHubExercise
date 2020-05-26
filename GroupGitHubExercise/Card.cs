@@ -37,5 +37,10 @@ namespace GroupGitHubExercise
             }
         }
 
+        public Card(int face, int suit)
+        {
+            Face = face;
+            Suit = suit;
+        }
     }
 }
