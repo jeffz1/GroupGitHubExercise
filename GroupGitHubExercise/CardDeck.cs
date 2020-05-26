@@ -10,16 +10,21 @@ namespace GroupGitHubExercise
         private int currentCard;
         private Random _rnd = new Random();
 
+        private readonly int NUMBER_OF_FACES = 11;
+        private readonly int NUMBER_OF_SUITS = 0;
+
         public CardDeck()
         {
-            Deck = new Card[Card.Faces.Length * Card.Suits.Length];
+            NUMBER_OF_SUITS = Card.Suits.Length;
+
+            Deck = new Card[NUMBER_OF_FACES * NUMBER_OF_SUITS];
             currentCard = 0;
 
 
             int cardIndex = 0;
-            for (int suit = 0; suit < 3; suit++)
+            for (int suit = 0; suit < NUMBER_OF_SUITS; suit++)
             {
-                for (int face = 0; face < 11; face++)
+                for (int face = 0; face < NUMBER_OF_FACES; face++)
                 {
                     Deck[cardIndex++] = new Card(face, suit);
                 }
@@ -32,6 +37,18 @@ namespace GroupGitHubExercise
                 throw new ApplicationException("Ran out of cards");
             else
                 return Deck[currentCard++];
+        }
+
+        public void Shuffle()
+        {
+            currentCard = 0;
+            for (int card = 0; card < Deck.Length; card++)
+            {
+                int randomIndex = _rnd.Next(0, Deck.Length);
+                Card temp = Deck[card];
+                Deck[card] = Deck[card];
+                Deck[randomIndex] = temp;
+            }
         }
     }
 }
