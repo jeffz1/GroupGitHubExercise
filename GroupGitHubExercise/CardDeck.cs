@@ -34,7 +34,7 @@ namespace GroupGitHubExercise
         public Card Deal()
         {
             if (currentCard >= Deck.Length)
-                throw new ApplicationException("Ran out of cards");
+                return null;
             else
                 return Deck[currentCard++];
         }
