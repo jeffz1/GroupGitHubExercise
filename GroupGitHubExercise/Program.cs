@@ -6,7 +6,8 @@ namespace GroupGitHubExercise
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var test = new TestCardDeck();
+            test.Run();
         }
     }
 }

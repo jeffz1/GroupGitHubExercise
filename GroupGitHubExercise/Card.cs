@@ -42,5 +42,7 @@ namespace GroupGitHubExercise
             Face = face;
             Suit = suit;
         }
+
+        public override string ToString() => $"{face} of {suit}";
     }
 }
