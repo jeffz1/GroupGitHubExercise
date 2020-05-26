@@ -25,5 +25,13 @@ namespace GroupGitHubExercise
                 }
             }
         }
+
+        public Card Deal()
+        {
+            if (currentCard >= Deck.Length)
+                throw new ApplicationException("Ran out of cards");
+            else
+                return Deck[currentCard++];
+        }
     }
 }
