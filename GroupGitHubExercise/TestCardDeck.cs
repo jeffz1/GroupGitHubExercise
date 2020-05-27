@@ -13,6 +13,7 @@ namespace GroupGitHubExercise
         public void Run()
         {
             deck = new CardDeck();
+            deck.Shuffle();
             DisplayDeck();
         }
 
