@@ -11,7 +11,7 @@ namespace GroupGitHubExercise
         public readonly static string[] Faces = { "Ace", "Two", "Three", "Four", "Five", "Six",
                                "Seven", "Eight", "Nine", "Ten",
                                "Jack", "Queen", "King"};
-        public readonly static string[] Suits = { "Diamonds", "Hearts", "Clubs", "Spade" };
+        public readonly static string[] Suits = { "Diamonds", "Hearts", "Clubs", "Spades" };
 
         private int face;
         public int Face
