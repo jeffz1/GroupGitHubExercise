@@ -8,6 +8,9 @@ namespace GroupGitHubExercise
         {
             var test = new TestCardDeck();
             test.Run();
+
+            var game = new HiLoGame();
+            game.PlayGame();
         }
     }
 }
