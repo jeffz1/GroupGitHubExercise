@@ -10,12 +10,12 @@ namespace GroupGitHubExercise
         private int currentCard;
         private Random _rnd = new Random();
 
-        private readonly int NUMBER_OF_FACES = 11;
-        private readonly int NUMBER_OF_SUITS = 0;
+        private readonly int NUMBER_OF_FACES = 13;
+        private readonly int NUMBER_OF_SUITS = 4;
 
         public CardDeck()
         {
-            NUMBER_OF_SUITS = Card.Suits.Length;
+         //   NUMBER_OF_SUITS = Card.Suits.Length;
 
             Deck = new Card[NUMBER_OF_FACES * NUMBER_OF_SUITS];
             currentCard = 0;
