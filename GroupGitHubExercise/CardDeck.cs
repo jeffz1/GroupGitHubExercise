@@ -46,7 +46,7 @@ namespace GroupGitHubExercise
             {
                 int randomIndex = _rnd.Next(0, Deck.Length);
                 Card temp = Deck[card];
-                Deck[card] = Deck[card];
+                Deck[card] = temp;
                 Deck[randomIndex] = temp;
             }
         }
