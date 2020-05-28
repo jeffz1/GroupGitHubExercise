@@ -10,12 +10,15 @@ namespace GroupGitHubExercise
         private int currentCard;
         private Random _rnd = new Random();
 
-        private readonly int NUMBER_OF_FACES = 11;
-        private readonly int NUMBER_OF_SUITS = 0;
+    //    public static readonly int NUMBER_OF_FACES = 11;
+    //    public static readonly int NUMBER_OF_SUITS = 0;
+        public static  int NUMBER_OF_FACES = 13;
+        public static  int NUMBER_OF_SUITS = 4;
 
         public CardDeck()
         {
             NUMBER_OF_SUITS = Card.Suits.Length;
+            NUMBER_OF_FACES = Card.Faces.Length;
 
             Deck = new Card[NUMBER_OF_FACES * NUMBER_OF_SUITS];
             currentCard = 0;
@@ -34,9 +37,11 @@ namespace GroupGitHubExercise
         public Card Deal()
         {
             if (currentCard >= Deck.Length)
-                return null;
-            else
-                return Deck[currentCard++];
+            
+                Shuffle();
+            
+            //else
+            return Deck[currentCard++];
         }
 
         public void Shuffle()
@@ -46,7 +51,8 @@ namespace GroupGitHubExercise
             {
                 int randomIndex = _rnd.Next(0, Deck.Length);
                 Card temp = Deck[card];
-                Deck[card] = temp;
+                //Deck[card] = temp;
+                Deck[card] = Deck[randomIndex];
                 Deck[randomIndex] = temp;
             }
         }
