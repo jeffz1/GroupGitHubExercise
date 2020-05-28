@@ -47,7 +47,8 @@ namespace GroupGitHubExercise
             {
                 int randomIndex = _rnd.Next(0, Deck.Length);
                 Card temp = Deck[card];
-                Deck[card] = temp;
+                //Deck[card] = temp; // This will cause duplicates
+                Deck[card] = Deck[randomIndex];
                 Deck[randomIndex] = temp;
             }
         }
