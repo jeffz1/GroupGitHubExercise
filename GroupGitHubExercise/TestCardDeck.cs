@@ -20,9 +20,10 @@ namespace GroupGitHubExercise
         private void DisplayDeck()
         {
             var card = deck.Deal();
-            while (card != null)
-            {
-                Console.WriteLine(card);
+           for (int i = 0; i < CardDeck.NUMBER_OF_FACES * CardDeck.NUMBER_OF_SUITS + 2; i++)
+            //while (card != null)
+           {
+                Console.WriteLine($"{ card} { i.ToString()}");
                 card = deck.Deal();
             }
         }
