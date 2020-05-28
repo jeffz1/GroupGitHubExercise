@@ -34,9 +34,8 @@ namespace GroupGitHubExercise
         public Card Deal()
         {
             if (currentCard >= Deck.Length)
-                return null;
-            else
-                return Deck[currentCard++];
+                Shuffle();
+            return Deck[currentCard++];
         }
 
         public void Shuffle()

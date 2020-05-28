@@ -20,8 +20,14 @@ namespace GroupGitHubExercise
         private void DisplayDeck()
         {
             var card = deck.Deal();
+            int count = 0;
             while (card != null)
             {
+                if (count++ > 100)
+                {
+                    Console.WriteLine("The deck appears to be endless - it must be automatically reshuffling!");
+                    break;
+                }
                 Console.WriteLine(card);
                 card = deck.Deal();
             }
