@@ -13,6 +13,8 @@ namespace GroupGitHubExercise
         private readonly int NUMBER_OF_FACES = 11;
         private readonly int NUMBER_OF_SUITS = 0;
 
+        public int MinimumCardCountBeforeReshuffle {get; set;} = 7;
+
         public CardDeck()
         {
             NUMBER_OF_SUITS = Card.Suits.Length;
@@ -33,8 +35,11 @@ namespace GroupGitHubExercise
 
         public Card Deal()
         {
-            if (currentCard >= Deck.Length)
+            if (currentCard >= Deck.Length - MinimumCardCountBeforeReshuffle)
+            {
+                Console.WriteLine($"At card #{currentCard} of {Deck.Length} - automatic reshuffle");
                 Shuffle();
+            }
             return Deck[currentCard++];
         }
 
