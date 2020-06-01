@@ -10,8 +10,11 @@ namespace GroupGitHubExercise
         private int currentCard;
         private Random _rnd = new Random();
 
-//        private readonly int NUMBER_OF_FACES = 11;
-//        private readonly int NUMBER_OF_SUITS = 0;
+        //private readonly int NUMBER_OF_FACES = 11;
+        //private readonly int NUMBER_OF_SUITS = 0;
+        //Fix # 5 Shuffle does not work, 
+        public static int NUMBER_OF_FACES;
+        public static int NUMBER_OF_SUITS;
 
         public CardDeck()
         {
@@ -35,9 +38,13 @@ namespace GroupGitHubExercise
         public Card Deal()
         {
             if (currentCard >= Deck.Length)
-                return null;
-            else
-                return Deck[currentCard++];
+            //return null;
+            // else
+            // return Deck[currentCard++]; shuffle();
+            {
+                Shuffle();
+            }
+             return Deck[currentCard++];
         }
 
         public void Shuffle()

@@ -20,10 +20,11 @@ namespace GroupGitHubExercise
         private void DisplayDeck()
         {
             var card = deck.Deal();
-           for (int i = 0; i < CardDeck.NUMBER_OF_FACES * CardDeck.NUMBER_OF_SUITS + 2; i++)
+            //Fix #5 allow shuffle without endless loop, show 54 cards to prove shuffle worked 
             //while (card != null)
-           {
-                Console.WriteLine($"{ card} { i.ToString()}");
+            for (int i = 0; i < CardDeck.NUMBER_OF_FACES * CardDeck.NUMBER_OF_SUITS + 2; i++)
+            {
+                Console.WriteLine($"{ card} card no: { (i+1).ToString()}");
                 card = deck.Deal();
             }
         }
